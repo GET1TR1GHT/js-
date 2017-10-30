@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入法</title>
+    <style>
+        div{
+            width: 100px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .xi{
+            border: 1px solid blue;
+        }
+        li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        .item1:hover{
+            background: #d9e1f6;;
+        }
+        .item1:last-child{
+            border-top:;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn=document.getElementById('xi');
+            var oDiv=document.getElementById('la');
+            var oClo=document.getElementById('ji');
+
+            oBtn.onclick=function () {
+                oDiv.style.display= oDiv.style.display=='block'?'none':'block';
+            };
+//            oClo.onclick=function () {
+//                oDiv.style.display='none';
+//            };
+        }
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li class="item" id="xi"><a href="#" >输入法</a>
+            <ul class="xi" style="display: none" id="la">
+                <li class="item1"><a href="#">手写</a></li>
+                <li class="item1"><a href="#">拼音</a></li>
+                <li class="item1"><a href="#"  id="ji">关闭</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

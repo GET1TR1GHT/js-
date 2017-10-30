@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>div运动</title>
+</head>
+<style>
+    div{
+        background-color: red;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left:0px;
+        top:50px;
+    }
+</style>
+<script>
+    window.onload=function () {
+        var oDiv=document.getElementsByTagName('div')[0];
+        var oP=document.getElementsByTagName('p')[0];
+        var timer=null;
+        oP.innerHTML=oDiv.offsetLeft+'px';
+
+        oDiv.onclick=function () {
+            timer=setInterval(function () {
+                var speed=(300-oDiv.offsetLeft)/40;
+                //speed=Math.ceil(speed);
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                oDiv.style.left=oDiv.offsetLeft+speed+'px';
+                oP.innerHTML=oDiv.offsetLeft+'px';
+               // oDiv.offsetLeft==300?clearInterval(timer):(oDiv.style.left=oDiv.offsetLeft+speed+'px',oP.innerHTML=oDiv.offsetLeft+'px');
+            },10)
+        }
+
+    }
+</script>
+<body>
+<div>
+
+</div>
+<p></p>
+</body>
+</html>

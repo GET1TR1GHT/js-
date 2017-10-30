@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传参</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        button{
+            display: block;
+        }
+    </style>
+    <script>
+        var myFun=function (a,b) {
+            alert(a.value);
+            alert(b.value);
+        }
+        window.onload = function () {
+            var oTxt=document.getElementsByTagName('input');
+            var oBtn = document.getElementsByTagName('button')[0];
+
+            oBtn.onclick=function () {
+                myFun(oTxt[0],oTxt[1])
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="text">
+    <input type="text">
+    <button>传参</button>
+</div>
+</body>
+</html>

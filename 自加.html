@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自加</title>
+</head>
+<script>
+    window.onload=function () {
+        var oBody = document.body;
+        var i=0;
+        setInterval(update,1000);
+        update();
+        function update() {
+            oBody.innerHTML=++i
+        }
+    }
+</script>
+<body>
+0
+</body>
+</html>

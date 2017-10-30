@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页皮肤</title>
+    <style>
+        body{
+            padding: 0 20%;
+            background: pink;
+        }
+        button{
+            border: 0;
+            width: 30px;
+            height: 30px;
+            outline: none;
+            cursor: pointer;
+        }
+        button:first-child{
+            border:3px solid red;
+            background: red;
+        }
+        button:nth-of-type(2){
+            border:3px solid green;
+            background:green;
+        }
+        button:nth-of-type(3){
+            border:3px solid blue;
+            background:blue;
+        }
+        button:active,button:hover,button:focus,button:link,button:visited{
+            background: white;
+        }
+        ul{
+            width: 493px;
+            height: 24px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            float: left;
+            width: 80px;
+            border: 1px solid #ccc;
+            text-align: center;
+            color: white;
+        }
+        #nav{
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn=document.getElementsByTagName('button');
+            var oDiv1 = document.getElementById('nav');
+            var oVal=["red","green","blue"];
+            var oAtt=["pink","#7cfc00","#00bfff"];
+
+            for(var i=0; i<oBtn.length;i++){
+                oBtn[i].index=i;
+                oBtn[i].onclick=function () {
+                    this.className='active';
+                    changeStyle(oVal[this.index],oAtt[this.index]);
+                }
+            }
+            var changeStyle=function (val,att) {
+                oDiv1.style.background=val;
+                document.body.style.background=att;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button></button>
+    <button></button>
+    <button></button>
+        <ul id="nav">
+            <li>新闻</li>
+            <li>娱乐</li>
+            <li>体育</li>
+            <li>电影</li>
+            <li>音乐</li>
+            <li>旅游</li>
+        </ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上下</title>
+    <style>
+        div {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom:0px;
+            right: 0px;
+        }
+    </style>
+    <script>
+        window.onscroll=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+
+            var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+
+            move(document.documentElement.clientHeight-oDiv.offsetWidth+scrollTop);
+        }
+        var timer=null;
+        function move(iTarget) {
+            clearInterval(timer);
+            timer=setInterval(function () {
+                var speed=(iTarget-oDiv.offsetTop)/6;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                oDiv.offsetTop==iTarget?clearInterval(timer):(oDiv.style.top=oDiv.offsetTop+speed+'px');
+            },30)
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

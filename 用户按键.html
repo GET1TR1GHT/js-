@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var oP = document.getElementsByTagName("p")[0];
+            
+            document.onkeydown=function () {
+                var event =event||window.event;
+                oP.innerHTML=event.keyCode;
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<p></p>
+</body>
+</html>
